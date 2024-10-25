@@ -1,6 +1,10 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  
+  /* width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 3fr */
 }
 
 .App {
@@ -14,10 +18,17 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: brown;
+  background-image: url("360_F_436795852_bU2LtHbIRwMfKial8U58WkKPTFQIJn3k.jpg");
   color: white;
+  font-weight: bold;
+  text-shadow: 
+  1px 1px 0 black,  /* Right shadow */
+ -1px 1px 0 black,  /* Left shadow */
+  1px -1px 0 black, /* Top shadow */
+ -1px -1px 0 black; /* Bottom shadow */
   grid-column: 1 / span 2;
   padding: 10px 5px;
+  height: flex;
 }
 
 form {
@@ -37,14 +48,39 @@ nav,
 article {
   height: 100%;
   padding: 10px;
+  /* size: 100vh, 100vw; */
 }
 
 article{
-  background-color: cyan;
+  /*
+  ERRORS:
+  the background image doesn't load on the firebase servers
+  the nav and article do not cover the whole screen
+  the nav and article do not split the screen on a 1 to 3 ratio
+  */
+  background-image: url("src/components/crystal-clear-sea-water-topdown-shot-free-video.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  color: rgb(231, 208, 105);
+  text-shadow: 
+        1px 1px 0 black,  /* Right shadow */
+       -1px 1px 0 black,  /* Left shadow */
+        1px -1px 0 black, /* Top shadow */
+       -1px -1px 0 black; /* Bottom shadow */
 }
 
 nav {
-  background-color: #dee9ff;
+  background-image: url(sand-background-top-view-desert-or-beach-texture-free-vector.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(110, 207, 207);
+  font-weight: bold;
+  text-shadow: 
+  1px 1px 0 black,  /* Right shadow */
+ -1px 1px 0 black,  /* Left shadow */
+  1px -1px 0 black, /* Top shadow */
+ -1px -1px 0 black; /* Bottom shadow */
 }
 
 nav p:hover {

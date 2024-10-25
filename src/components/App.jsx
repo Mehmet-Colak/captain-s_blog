@@ -7,7 +7,13 @@ import { useAuthentication } from "../services/authService"
 import { fetchArticles, createArticle } from "../services/articleService"
 import "./App.css"
 
+//develop in this
+//http://localhost:5173/;
+//npm run dev
+//submit on this
 //https://captain-s-blog.web.app;
+//npm run build
+//firebase deploy
 
 export default function App() {
   const [articles, setArticles] = useState([])
