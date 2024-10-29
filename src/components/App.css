@@ -10,7 +10,7 @@ body {
 .App {
   display: grid;
   grid-template-rows: min-content auto;
-  grid-template-columns: 250px auto;
+  grid-template-columns: minmax(100px, 1fr)  3.5fr;
   height: 100vh;
   overflow: scroll;
 }
@@ -58,11 +58,12 @@ article{
   the nav and article do not cover the whole screen
   the nav and article do not split the screen on a 1 to 3 ratio
   */
-  background-image: url("src/components/crystal-clear-sea-water-topdown-shot-free-video.jpg");
+  background-image: url("crystal-clear-sea-water-topdown-shot-free-video.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: auto;
-  color: rgb(231, 208, 105);
+  height: 100%;
+  color: rgb(233, 201, 71);
+  font-size: larger;
   text-shadow: 
         1px 1px 0 black,  /* Right shadow */
        -1px 1px 0 black,  /* Left shadow */
@@ -71,11 +72,12 @@ article{
 }
 
 nav {
-  background-image: url(sand-background-top-view-desert-or-beach-texture-free-vector.jpg);
+  background-image: url("sand-background-top-view-desert-or-beach-texture-free-vector.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: rgb(110, 207, 207);
   font-weight: bold;
+  text-align: center;
   text-shadow: 
   1px 1px 0 black,  /* Right shadow */
  -1px 1px 0 black,  /* Left shadow */

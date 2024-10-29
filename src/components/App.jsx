@@ -7,34 +7,20 @@ import { useAuthentication } from "../services/authService"
 import { fetchArticles, createArticle } from "../services/articleService"
 import "./App.css"
 
-//develop in this
-//http://localhost:5173/;
-//npm run dev
-//submit on this
-//https://captain-s-blog.web.app;
-//npm run build
-//firebase deploy
-
 export default function App() {
   const [articles, setArticles] = useState([])
   const [article, setArticle] = useState(null)
   const [writing, setWriting] = useState(false)
   const user = useAuthentication()
 
-  // This is a trivial app, so just fetch all the articles only when
-  // a user logs in. A real app would do pagination. Note that
-  // "fetchArticles" is what gets the articles from the service and
-  // then "setArticles" writes them into the React state.
   useEffect(() => {
     if (user) {
       fetchArticles().then(setArticles)
     }
   }, [user])
 
-  // Update the "database" *then* update the internal React state. These
-  // two steps are definitely necessary.
-  function addArticle({ title, body }) {
-    createArticle({ title, body }).then((article) => {
+  function addArticle({ title, body, date, location }) {
+    createArticle({ title, body, date, location }).then((article) => {
       setArticle(article)
       setArticles([article, ...articles])
       setWriting(false)
@@ -44,7 +30,7 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        Blog
+        The Captain's Blog
         {user && <button onClick={() => setWriting(true)}>New Article</button>}
         {!user ? <SignIn /> : <SignOut />}
       </header>
@@ -54,7 +40,7 @@ export default function App() {
       {!user ? (
         ""
       ) : writing ? (
-        <ArticleEntry addArticle={addArticle} />
+        <ArticleEntry addArticle={addArticle} setWriting={setWriting} />
       ) : (
         <Article article={article} />
       )}
